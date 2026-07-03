@@ -46,7 +46,7 @@ for _, row in ipairs(adoors.door) do
 	local craft_material = row[7]
 
 
-minetest.register_node(":adoors:" ..name.. "_Ldoor", {
+core.register_node(":adoors:" ..name.. "_Ldoor", {
 	description = desc.. " Door (left)",
 	inventory_image = "doors_item_" ..name.. ".png^[transformFXX",
 	wield_image = "doors_item_" ..name.. ".png^[transformFXX",
@@ -88,12 +88,12 @@ minetest.register_node(":adoors:" ..name.. "_Ldoor", {
 		},
 	},
 	on_rightclick = function(pos, node, puncher)
-		minetest.swap_node(pos, {name = "adoors:" ..name.. "_Ldoor_open", param2 = node.param2})
-		minetest.sound_play(door_sound.."_open", {gain = 0.20, max_hear_distance = 2})
+		core.swap_node(pos, {name = "adoors:" ..name.. "_Ldoor_open", param2 = node.param2})
+		core.sound_play(door_sound.."_open", {gain = 0.20, max_hear_distance = 2})
 	end,
 })
 
-minetest.register_node(":adoors:" ..name.. "_Ldoor_open", {
+core.register_node(":adoors:" ..name.. "_Ldoor_open", {
 	drawtype = "mesh",
 	mesh = "adoors_Ldoor_open.obj",
 	tiles = {door_tiles},
@@ -134,12 +134,12 @@ minetest.register_node(":adoors:" ..name.. "_Ldoor_open", {
 		},
 	},
 	on_rightclick = function(pos, node, puncher)
-		minetest.swap_node(pos, {name = "adoors:" ..name.. "_Ldoor", param2 = node.param2})
-		minetest.sound_play(door_sound.."_close", {gain = 0.20, max_hear_distance = 2})
+		core.swap_node(pos, {name = "adoors:" ..name.. "_Ldoor", param2 = node.param2})
+		core.sound_play(door_sound.."_close", {gain = 0.20, max_hear_distance = 2})
 	end,
 })
 
-minetest.register_node(":adoors:" ..name.. "_Rdoor", {
+core.register_node(":adoors:" ..name.. "_Rdoor", {
 	description = desc.. " Door (right)",
 	inventory_image = "doors_item_" ..name.. ".png",
 	wield_image = "doors_item_" ..name.. ".png",
@@ -181,12 +181,12 @@ minetest.register_node(":adoors:" ..name.. "_Rdoor", {
 		},
 	},
 	on_rightclick = function(pos, node, puncher)
-		minetest.swap_node(pos, {name = "adoors:" ..name.. "_Rdoor_open", param2 = node.param2})
-		minetest.sound_play(door_sound.."_open", {gain = 0.20, max_hear_distance = 2})
+		core.swap_node(pos, {name = "adoors:" ..name.. "_Rdoor_open", param2 = node.param2})
+		core.sound_play(door_sound.."_open", {gain = 0.20, max_hear_distance = 2})
 	end,
 })
 
-minetest.register_node(":adoors:" ..name.. "_Rdoor_open", {
+core.register_node(":adoors:" ..name.. "_Rdoor_open", {
 	drawtype = "mesh",
 	mesh = "adoors_Rdoor_open.obj",
 	tiles = {door_tiles},
@@ -227,8 +227,8 @@ minetest.register_node(":adoors:" ..name.. "_Rdoor_open", {
 		},
 	},
 	on_rightclick = function(pos, node, puncher)
-		minetest.swap_node(pos, {name = "adoors:" ..name.. "_Rdoor", param2 = node.param2})
-		minetest.sound_play(door_sound.."_close", {gain = 0.20, max_hear_distance = 2})
+		core.swap_node(pos, {name = "adoors:" ..name.. "_Rdoor", param2 = node.param2})
+		core.sound_play(door_sound.."_close", {gain = 0.20, max_hear_distance = 2})
 	end,
 })
 
