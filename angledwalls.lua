@@ -22,7 +22,7 @@ function angledwalls.angled_place(itemstack, placer, pointed_thing)
 			param2 = 3
 		end
 	end
-	return minetest.item_place(itemstack, placer, pointed_thing, param2)
+	return core.item_place(itemstack, placer, pointed_thing, param2)
 end
 
 --Register angledwalls.
@@ -30,7 +30,7 @@ end
 
 function angledwalls.register_angled_wall(subname, recipeitem, groups, images, description, sounds)
 	groups.angledwall = 1
-minetest.register_node(":angledwalls:angled_wall" .. subname, {
+core.register_node(":angledwalls:angled_wall" .. subname, {
 	description = description,
 	drawtype = "mesh",
 	mesh = "angled_wall.obj",
@@ -64,7 +64,7 @@ end
 
 function angledwalls.register_low_angled_wall(subname, recipeitem, groups, images, description, sounds)
 	groups.lowangledwall = 1
-minetest.register_node(":angledwalls:low_angled_wall" .. subname, {
+core.register_node(":angledwalls:low_angled_wall" .. subname, {
 	description = description,
 	drawtype = "mesh",
 	mesh = "low_angled_wall.obj",
@@ -102,7 +102,7 @@ end
 
 function angledwalls.register_corner(subname, recipeitem, groups, images, description, sounds)
 	groups.corner = 1
-minetest.register_node(":angledwalls:corner" .. subname, {
+core.register_node(":angledwalls:corner" .. subname, {
 	description = description,
 	drawtype = "mesh",
 	mesh = "angledwalls_corner.obj",

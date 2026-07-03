@@ -20,7 +20,7 @@ function angledglass.angled_place(itemstack, placer, pointed_thing)
 			param2 = 3
 		end
 	end
-	return minetest.item_place(itemstack, placer, pointed_thing, param2)
+	return core.item_place(itemstack, placer, pointed_thing, param2)
 end
 
 
@@ -30,7 +30,7 @@ end
 function angledglass.register_glass(subname, recipeitem, groups, images, description, sounds)
 	groups.glass = 1
 
-minetest.register_node(":angledglass:glass" .. subname, {
+core.register_node(":angledglass:glass" .. subname, {
 	description = description,
 	drawtype = "mesh",
 	mesh = "angled_glass.obj",
@@ -74,7 +74,7 @@ angledglass.register_glass("_acacia_wood_glass", "default:acacia_wood",
 		{"default_glass.png", "default_acacia_wood.png"},
 		"Acacia Wood Glass",
 		default.node_sound_glass_defaults())
-		
+
 angledglass.register_glass("_acacia_wood_obsidian_glass", "default:acacia_wood",
 		{choppy = 2, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
 		{"default_obsidian_glass.png", "default_acacia_wood.png"},

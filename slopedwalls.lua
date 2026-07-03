@@ -7,7 +7,7 @@ slopedwalls = {}
 
 function slopedwalls.register_sloped_wall(subname, recipeitem, groups, images, description, sounds)
 groups.sloped = 1
-minetest.register_node(":slopedwalls:sloped_wall" .. subname, {
+core.register_node(":slopedwalls:sloped_wall" .. subname, {
 	description = description,
 	drawtype = "mesh",
 	mesh = "sloped_wall.obj",
@@ -192,7 +192,7 @@ slopedwalls.register_sloped_wall("_stonebrick", "default:stonebrick",
 		{"default_stone_brick.png"},
 		"Stone Brick Sloped Wall",
 		default.node_sound_stone_defaults())
-		
+
 slopedwalls.register_sloped_wall("_obsidian", "default:obsidian",
 		{cracky = 1, level = 2},
 		{"default_obsidian.png"},
