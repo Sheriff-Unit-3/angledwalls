@@ -4,7 +4,7 @@ angledglass = {}
 -- To use put "on_place = angledglass.angled_place" in the node def
 
 function angledglass.angled_place(itemstack, placer, pointed_thing)
-	local placer_pos = placer:getpos()
+	local placer_pos = placer:get_pos()
 	local pos = pointed_thing.above
 	local param2
 	if pos.x > placer_pos.x then
