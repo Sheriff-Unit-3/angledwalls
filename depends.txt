@@ -1,4 +1,0 @@
-default
-doors
-bakedclay?
-quartz?
