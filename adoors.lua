@@ -6,34 +6,45 @@ adoors = {}
 
 -- Register adoor nodes
 adoors.door = {
-	{"steel", "Steel",
-	{cracky = 1, door = 1},
-	default.node_sound_metal_defaults(),
-	"doors_steel_door",
-	{name = "doors_door_steel.png"},
-	"default:steelblock"},
+	{
+		"steel",
+		"Steel",
+		{cracky = 1, door = 1},
+		default.node_sound_metal_defaults(),
+		"doors_steel_door",
+		{name = "doors_door_steel.png"},
+		"default:steelblock"
+	},
 
-	{"glass", "Glass",
-	{cracky = 3, door = 1},
-	default.node_sound_glass_defaults(),
-	"doors_glass_door",
-	{name = "doors_door_glass.png"},
-	"default:glass"},
+	{
+		"glass",
+		"Glass",
+		{cracky = 3, door = 1},
+		default.node_sound_glass_defaults(),
+		"doors_glass_door",
+		{name = "doors_door_glass.png"},
+		"default:glass"
+	},
 
-	{"obsidian_glass",
-	"Obsidian Glass",
-	{cracky = 1, door = 1},
-	default.node_sound_glass_defaults(),
-	"doors_glass_door",
-	{name = "doors_door_obsidian_glass.png"},
-	"default:obsidian_glass"},
+	{
+		"obsidian_glass",
+		"Obsidian Glass",
+		{cracky = 1, door = 1},
+		default.node_sound_glass_defaults(),
+		"doors_glass_door",
+		{name = "doors_door_obsidian_glass.png"},
+		"default:obsidian_glass"
+	},
 
-	{"wood", "Wood",
-	{choppy = 2, door = 1},
-	default.node_sound_wood_defaults(),
-	"doors_door",
-	{name = "doors_door_wood.png"},
-	"default:wood"},
+	{
+		"wood",
+		"Wood",
+		{choppy = 2, door = 1},
+		default.node_sound_wood_defaults(),
+		"doors_door",
+		{name = "doors_door_wood.png"},
+		"default:wood"
+	},
 }
 
 for _, row in ipairs(adoors.door) do
@@ -87,7 +98,7 @@ core.register_node(":adoors:" ..name.. "_Ldoor", {
 			{-0.5, -0.5, -0.5, -0.375, 1.5, -0.375},
 		},
 	},
-	on_rightclick = function(pos, node, puncher)
+	on_rightclick = function(pos, node, _)
 		core.swap_node(pos, {name = "adoors:" ..name.. "_Ldoor_open", param2 = node.param2})
 		core.sound_play(door_sound.."_open", {gain = 0.20, max_hear_distance = 2})
 	end,
@@ -133,7 +144,7 @@ core.register_node(":adoors:" ..name.. "_Ldoor_open", {
 			{-0.5, -0.5, -0.5, -0.375, 1.5, -0.375},
 		},
 	},
-	on_rightclick = function(pos, node, puncher)
+	on_rightclick = function(pos, node, _)
 		core.swap_node(pos, {name = "adoors:" ..name.. "_Ldoor", param2 = node.param2})
 		core.sound_play(door_sound.."_close", {gain = 0.20, max_hear_distance = 2})
 	end,
@@ -180,7 +191,7 @@ core.register_node(":adoors:" ..name.. "_Rdoor", {
 			{-0.5, -0.5, -0.5, -0.375, 1.5, -0.375},
 		},
 	},
-	on_rightclick = function(pos, node, puncher)
+	on_rightclick = function(pos, node, _)
 		core.swap_node(pos, {name = "adoors:" ..name.. "_Rdoor_open", param2 = node.param2})
 		core.sound_play(door_sound.."_open", {gain = 0.20, max_hear_distance = 2})
 	end,
@@ -226,10 +237,9 @@ core.register_node(":adoors:" ..name.. "_Rdoor_open", {
 			{1.25, -0.5, -0.5, 1.375, 1.5, -0.375},
 		},
 	},
-	on_rightclick = function(pos, node, puncher)
+	on_rightclick = function(pos, node, _)
 		core.swap_node(pos, {name = "adoors:" ..name.. "_Rdoor", param2 = node.param2})
 		core.sound_play(door_sound.."_close", {gain = 0.20, max_hear_distance = 2})
 	end,
 })
-
 end
