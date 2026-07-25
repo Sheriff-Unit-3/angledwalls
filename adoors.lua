@@ -1,6 +1,6 @@
 -- adoors by TumeniNodes (C) 2018
 
-screwdriver = screwdriver or {}
+local screwdriver = rawget(_G, "screwdriver") or {}
 
 adoors = {}
 

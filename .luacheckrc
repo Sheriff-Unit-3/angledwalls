@@ -1,9 +1,9 @@
 unused_args = false
-allow_defined_top = true
 max_line_length = 170
 
 globals = {
     "core",
+    "adoors",
     "angledglass",
     "angledwalls",
     "slopedwalls",
@@ -18,5 +18,5 @@ read_globals = {
     "dump",
 
     -- MTG
-    "default"
+    "default", "screwdriver",
 }
