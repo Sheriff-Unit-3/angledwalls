@@ -47,6 +47,8 @@ adoors.door = {
 	},
 }
 
+local ALPHA_CLIP = core.features.use_texture_alpha_string_modes and "clip" or true
+
 for _, row in ipairs(adoors.door) do
 	local name = row[1]
 	local desc = row[2]
@@ -64,7 +66,7 @@ core.register_node(":adoors:" ..name.. "_Ldoor", {
 	drawtype = "mesh",
 	mesh = "adoors_Ldoor.obj",
 	tiles = {door_tiles},
-	use_texture_alpha = true,
+	use_texture_alpha = ALPHA_CLIP,
 	paramtype = "light",
 	paramtype2 = "facedir",
 	on_rotate = screwdriver.rotate_simple,
@@ -108,7 +110,7 @@ core.register_node(":adoors:" ..name.. "_Ldoor_open", {
 	drawtype = "mesh",
 	mesh = "adoors_Ldoor_open.obj",
 	tiles = {door_tiles},
-	use_texture_alpha = true,
+	use_texture_alpha = ALPHA_CLIP,
 	paramtype = "light",
 	paramtype2 = "facedir",
 	on_rotate = screwdriver.rotate_simple,
@@ -157,7 +159,7 @@ core.register_node(":adoors:" ..name.. "_Rdoor", {
 	drawtype = "mesh",
 	mesh = "adoors_Rdoor.obj",
 	tiles = {door_tiles},
-	use_texture_alpha = true,
+	use_texture_alpha = ALPHA_CLIP,
 	paramtype = "light",
 	paramtype2 = "facedir",
 	on_rotate = screwdriver.rotate_simple,
@@ -201,7 +203,7 @@ core.register_node(":adoors:" ..name.. "_Rdoor_open", {
 	drawtype = "mesh",
 	mesh = "adoors_Rdoor_open.obj",
 	tiles = {door_tiles},
-	use_texture_alpha = true,
+	use_texture_alpha = ALPHA_CLIP,
 	paramtype = "light",
 	paramtype2 = "facedir",
 	on_rotate = screwdriver.rotate_simple,

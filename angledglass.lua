@@ -26,6 +26,8 @@ end
 --Register angledglass.
 --Node will be called angledglass:glass_<subname>
 
+local ALPHA_CLIP = core.features.use_texture_alpha_string_modes and "clip" or true
+
 function angledglass.register_glass(subname, recipeitem, groups, images, description, sounds)
 	groups.glass = 1
 
@@ -34,7 +36,7 @@ function angledglass.register_glass(subname, recipeitem, groups, images, descrip
 		drawtype = "mesh",
 		mesh = "angled_glass.obj",
 		tiles = images,
-		use_texture_alpha = true,
+		use_texture_alpha = ALPHA_CLIP,
 		paramtype = "light",
 		sunlight_propogates = true,
 		paramtype2 = "facedir",
