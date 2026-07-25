@@ -25,6 +25,12 @@ function angledwalls.angled_place(itemstack, placer, pointed_thing)
 	return core.item_place(itemstack, placer, pointed_thing, param2)
 end
 
+local ALPHA_OPAQUE = core.features.use_texture_alpha_string_modes and "opaque" or false
+local function get_alpha(recipeitem)
+	local def = core.registered_nodes[recipeitem]
+	return def and def.use_texture_alpha or ALPHA_OPAQUE
+end
+
 --Register angledwalls.
 --Node will be called angledwalls:angled_wall_<subname>
 
@@ -37,6 +43,7 @@ function angledwalls.register_angled_wall(subname, recipeitem, groups, images, d
 		tiles = images,
 		paramtype = "light",
 		sunlight_propogates = true,
+		use_texture_alpha = get_alpha(recipeitem),
 		paramtype2 = "facedir",
 		is_ground_content = false,
 		groups = groups,
@@ -71,6 +78,7 @@ function angledwalls.register_low_angled_wall(subname, recipeitem, groups, image
 		tiles = images,
 		paramtype = "light",
 		sunlight_propogates = true,
+		use_texture_alpha = get_alpha(recipeitem),
 		paramtype2 = "facedir",
 		is_ground_content = false,
 		groups = groups,
@@ -109,6 +117,7 @@ function angledwalls.register_corner(subname, recipeitem, groups, images, descri
 		tiles = images,
 		paramtype = "light",
 		sunlight_propogates = true,
+		use_texture_alpha = get_alpha(recipeitem),
 		paramtype2 = "facedir",
 		is_ground_content = false,
 		groups = groups,
